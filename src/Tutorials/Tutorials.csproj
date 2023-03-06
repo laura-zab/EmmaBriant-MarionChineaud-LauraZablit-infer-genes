@@ -15,16 +15,19 @@
     <When Condition="'$(Configuration)'=='DebugFull' OR '$(Configuration)'=='ReleaseFull'">
       <PropertyGroup>
         <TargetFramework>net472</TargetFramework>
+        <EnableWindowsTargeting>true</EnableWindowsTargeting>
       </PropertyGroup>
     </When>
     <When Condition="'$(Configuration)'=='DebugCore' OR '$(Configuration)'=='ReleaseCore'">
       <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
+        <EnableWindowsTargeting>true</EnableWindowsTargeting>
       </PropertyGroup>
     </When>
     <Otherwise>
       <PropertyGroup>
         <TargetFrameworks>net6.0;net6.0-windows;net472</TargetFrameworks>
+        <EnableWindowsTargeting>true</EnableWindowsTargeting>
         <AddSyntheticProjectReferencesForSolutionDependencies>false</AddSyntheticProjectReferencesForSolutionDependencies>
       </PropertyGroup>
     </Otherwise>

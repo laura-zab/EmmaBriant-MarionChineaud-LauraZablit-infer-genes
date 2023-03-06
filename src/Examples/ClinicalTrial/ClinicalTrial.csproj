@@ -13,19 +13,19 @@
   <Choose>
     <When Condition="'$(Configuration)'=='DebugFull' OR '$(Configuration)'=='ReleaseFull'">
       <PropertyGroup>
-        <TargetFramework>net472</TargetFramework>
+        <TargetFramework>net6.0</TargetFramework>
         <EnableWindowsTargeting>true</EnableWindowsTargeting>
       </PropertyGroup>
     </When>
     <When Condition="'$(Configuration)'=='DebugCore' OR '$(Configuration)'=='ReleaseCore'">
       <PropertyGroup>
-        <TargetFramework>net6.0-windows</TargetFramework>
+        <TargetFramework>net6.0</TargetFramework>
         <EnableWindowsTargeting>true</EnableWindowsTargeting>
       </PropertyGroup>
     </When>
     <Otherwise>
       <PropertyGroup>
-        <TargetFrameworks>net6.0-windows;net472</TargetFrameworks>
+        <TargetFrameworks>net6.0;net472</TargetFrameworks>
         <EnableWindowsTargeting>true</EnableWindowsTargeting>
       </PropertyGroup>
     </Otherwise>
@@ -65,8 +65,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Compiler\Compiler.csproj" />
-    <ProjectReference Include="..\..\Runtime\Runtime.csproj" />
+    <ProjectReference Include="..\..\Compiler\Compiler.csproj">
+      <ReferenceSourceTarget></ReferenceSourceTarget>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Runtime\Runtime.csproj">
+      <ReferenceSourceTarget></ReferenceSourceTarget>
+    </ProjectReference>
   </ItemGroup>
 
   <ItemGroup>

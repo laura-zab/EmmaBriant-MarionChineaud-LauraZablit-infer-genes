@@ -31,7 +31,7 @@
         <TargetFrameworks>net6.0-windows;net472</TargetFrameworks>
       </PropertyGroup>
 		  <PropertyGroup Condition="'$(IsWindows)'!='true'">
-			  <TargetFramework>net6.0;net472</TargetFramework>
+			  <TargetFrameworks>net6.0;net472</TargetFrameworks>
 		  </PropertyGroup>
 	  </Otherwise>
   </Choose>
